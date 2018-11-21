@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>JSF RSBK</title>
+    </h:head>
+    
+    <head>
+    <style>
+body {background-color: honeydew;}
+h1   {color: blue;}
+h2   {color: black;}
+p    {color: red;}
+    </style>
+    <style>
+table {
+    font-family: timesnewroman, timesnewroman;
+    border-collapse: collapse;
+    width: 90%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 5px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+    </style>
+</head>
+    
+    <h:body>
+        <center>
+             <h2>Tambah Data Mahasiswa</h2>
+             
+            <h:form>
+            <table>
+            <tr>
+               <td>Kode Kue:</td>
+               <td><h:inputText value="#{kue.KODE}" required="true" requiredMessage="Kode Kue Gak boleh Kosong!" ></h:inputText></td>
+            </tr>
+            <tr>
+               <td>Nama Kue :</td>
+               <td><h:inputText value="#{kue.NAMA}" ></h:inputText></td>
+            </tr>
+            <tr>
+               <td>Harga Satuan :</td>
+               <td><h:inputText value="#{kue.HARGA}"></h:inputText></td>
+            </tr>
+            <tr>
+               <td>Kode Jenis Kue :</td>
+               <td><h:inputText value="#{kue.KODEJENIS}"></h:inputText></td>
+            </tr>
+            <tr>
+               <td>Stock :</td>
+               <td><h:inputText value="#{kue.STOCK}"></h:inputText></td>
+            </tr>
+            </table>
+                <br></br>
+                <h:commandButton value="Tambahkan" action="#{kue.Tambah_Kue}"></h:commandButton>
+              <br></br>
+              <br></br>
+            </h:form>
+                    <h:form>
+                   <h:commandButton value="Kembali" action="index.xhtml"></h:commandButton>
+       </h:form>
+        </center>
+                   
+    </h:body>
+</html>
+

@@ -1,0 +1,1 @@
+CREATE VIEW `info_kue`  AS  select `jenis_kue`.`nama_jenis_kue` AS `nama_jenis_kue`,`kue`.`nama_kue` AS `nama_kue`,`kue`.`harga_satuan` AS `harga_satuan`,`jenis_kue`.`jangka_expired` AS `jangka_expired`,`kue`.`stock` AS `stock` from (`jenis_kue` join `kue` on((`jenis_kue`.`kode_jenis_kue` = `kue`.`kode_jenis_kue`))) ;

@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Tugas JSF RSBK</title>
+    </h:head>
+    <h:body>
+<head>
+    <style>
+body {background-color: ghostwhite;}
+h1   {color: blue;}
+h2   {color: black;}
+p    {color: red;}
+    </style>
+    <style>
+table {
+    font-family: timesnewroman, timesnewroman;
+    border-collapse: collapse;
+    width: 90%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 5px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+    </style>
+</head>
+        
+        <center>
+            <h2>Data Kue</h2>
+            <!--<h2 style="color:blue;">Data Kue</h2>-->
+            <table>
+            <h:form>
+            <h:dataTable value="#{kue.get_all_kue}" var="maha" width="800px">
+                <h:outputText value="#{kue.NAMA}"/>
+                <h:column>
+                  <f:facet name="header">Kode Kue</f:facet>
+                  <h:outputText value="#{maha.KODE}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">Nama Kue</f:facet>
+                 <h:outputText value="#{maha.NAMA}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">Harga Satuan</f:facet>
+                 <h:outputText value="#{maha.HARGA}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">Kode Jenis Kue</f:facet>
+                 <h:outputText value="#{maha.KODEJENIS}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">Stock</f:facet>
+                 <h:outputText value="#{maha.STOCK}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Edit</f:facet>
+                    <h:commandButton value="Edit" action="#{kue.Edit_Kue}">
+                      <f:param name="action" value="#{maha.KODE}" />
+                    </h:commandButton>
+                  </h:column>
+                  <h:column>
+                    <f:facet name="header">Delete</f:facet>
+                    <h:commandButton value="Delete" action="#{kue.Delete_Kue}" onclick="return confirm('Yakin mau dihapus?')">
+                      <f:param name="action" value="#{maha.KODE}" />
+                    </h:commandButton>
+                  </h:column>
+            </h:dataTable>
+            <br></br>
+            </h:form>
+            </table>
+            <h:form>
+                <h:form>
+                &nbsp;
+                <h:commandButton value="Tambahkan" action="Tambah.xhtml"></h:commandButton>
+                </h:form>
+            </h:form>
+        </center>
+        <br></br>
+        <br></br>
+        <center>
+            <h2>Data Jenis Kue</h2>
+            <!--<h2 style="color:blue;">Data Jenis Kue</h2>-->
+            <table>
+            <h:form>
+            <h:dataTable value="#{jeniskue.get_all_jeniskue}" var="jenis" width="800px">
+                <h:outputText value="#{jeniskue.NAMA}"/>
+                <h:column>
+                  <f:facet name="header">Kode Jenis Kue</f:facet>
+                  <h:outputText value="#{jenis.KODE}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">Nama Jenis Kue</f:facet>
+                 <h:outputText value="#{jenis.NAMA}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">Jangka Expired</f:facet>
+                 <h:outputText value="#{jenis.EXPIRED}"></h:outputText>
+                </h:column>
+               
+                <h:column>
+                    <f:facet name="header">Edit</f:facet>
+                    <h:commandButton value="Edit" action="#{jeniskue.Edit_Jeniskue}">
+                      <f:param name="action" value="#{jenis.KODE}" />
+                    </h:commandButton>
+                  </h:column>
+                  <h:column>
+                    <f:facet name="header">Delete</f:facet>
+                    <h:commandButton value="Delete" action="#{jeniskue.Delete_Jeniskue}"  onclick="return confirm('Yakin mau dihapus?')">
+                      <f:param name="action" value="#{jenis.KODE}" />
+                    </h:commandButton>
+                  </h:column>
+            </h:dataTable>
+            <br></br>
+            </h:form>
+                </table>
+            <h:form>
+                <h:form>
+                &nbsp;
+                <h:commandButton value="Tambahkan" action="Tambah1.xhtml"></h:commandButton>
+                </h:form>
+            </h:form>
+            
+               <br></br>
+                 
+                  <h:form>
+                        <h:form>
+                   <h:commandButton value="Info Kue" action="Infokue.xhtml"></h:commandButton>
+                         </h:form>
+                  </h:form>
+<!--               <br></br>-->
+                 
+<!--                  <h:form>
+                        <h:form>
+                   <h:commandButton value="Desaign" action="Desain.xhtml"></h:commandButton>
+                         </h:form>
+                  </h:form>-->
+        </center>
+    </h:body>
+</html>
+
